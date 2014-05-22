@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- root "notes#index"
+ root "welcome#index"
  resources :notes
  resources :projects
  resources :gem_comments

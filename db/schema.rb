@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522052723) do
+ActiveRecord::Schema.define(version: 20140522060431) do
 
   create_table "gem_comments", force: true do |t|
     t.string   "name"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20140522052723) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "code_sample"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

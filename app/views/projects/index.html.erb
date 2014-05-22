@@ -1,0 +1,18 @@
+<h1>Index</h1>
+<hr>
+
+<% @projects.each do |project| %>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to project.name, project %>
+  </div>
+  <div class="col-md-5">
+    <%= project.description %>
+  </div>
+  <div class="col-md-5">
+      <%= markdown project.code_sample %>
+  </div>
+</div>
+<hr>
+<% end %>
+<%= will_paginate @projects, renderer: BootstrapPagination::Rails %>

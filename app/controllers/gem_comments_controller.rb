@@ -23,6 +23,27 @@ class GemCommentsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @gem_comment.update(gem_comment_params)
+      redirect_to @gem_comment, notice: "#{@gem_comment.name} updated"
+    else
+      flash[:error] = "Whoops gem comment did not save"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @gem_comment.destroy
+      redirect_to gem_comments_path, notice: "#{@gem_comment.name} destroyed"
+    else
+      flash[:error] = "Did not destroy"
+      redirect_to gem_comment_path 
+    end
+  end
+
   private
 
   def gem_comment_params

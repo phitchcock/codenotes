@@ -1,5 +1,6 @@
 class GemCommentsController < ApplicationController
   
+  before_action :authenticate_user!
   before_action :set_gem_comment, only: [:show, :edit, :update, :destroy]
 
   def index

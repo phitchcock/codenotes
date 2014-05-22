@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.paginate(page: params[:page], per_page: 10)
+    render layout: "empty"
   end
 
   def show
@@ -29,7 +30,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to @project, notice: "#{@project.name} updated"
+      redirect_to projects_path, notice: "#{@project.name} updated"
     else
       flash[:error] = "Project did not save"
       render :edit

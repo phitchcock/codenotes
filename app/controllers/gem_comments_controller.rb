@@ -4,6 +4,7 @@ class GemCommentsController < ApplicationController
 
   def index
     @gem_comments = GemComment.paginate(page: params[:page], per_page: 10)
+    render layout: "empty"
   end
 
   def show

@@ -1,18 +1,39 @@
-<h1>Notes Index</h1>
-<hr>
-
-<% @notes.each do |note| %>
-<div class="row">
-  <div class="col-md-2">
-    <%= link_to note.title, note %>
-  </div>
-  <div class="col-md-5">
-    <%= markdown note.description %>
-  </div>
-  <div class="col-md-5">
-      <%= markdown note.code_sample %>
-  </div>
+<div id="guide">
+  <h1 class="logo"><a href="#">Notes</a></h1>
+  <ul class="menu nav">
+    <li><%= link_to 'Notes', notes_path %></li>
+    <li><%= link_to 'Gems', gem_comments_path %></li>
+    <li><%= link_to 'Projects', projects_path %></li>
+  </ul>
 </div>
-<hr>
-<% end %>
-<%= will_paginate @notes, renderer: BootstrapPagination::Rails %>
+
+<div id="api-docs">
+  <div id="methods">
+    <div class="languages">
+      <a class="language selected" data-lang="ruby" href="#">Ruby</a>
+      <%= link_to 'Note', new_note_path, class: "language selected" %>
+      <%= link_to 'Gem', new_gem_comment_path, class: "language selected" %>
+      <%= link_to 'Project', new_project_path, class: "language selected" %>
+    </div>
+
+    <% @notes.each do |note| %>
+    <div class="method">
+      <div class="method-section clearfix">
+        <div class="method-description">
+          <h3><%= link_to note.title, note %></h3>
+          <p><%= note.description %></p>
+        </div>
+        <div class="method-example">
+          <pre>
+          <code class="ruby">#
+            <%= note.code_sample %>
+          </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+  <%= will_paginate @projects, renderer: BootstrapPagination::Rails %>
+</div>

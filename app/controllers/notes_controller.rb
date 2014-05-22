@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def index
-    @notes = Note.all
+    @notes = Note.paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -17,7 +17,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
 
     if @note.save
-      redirect_to notes_path, notice: "#{@note} was created!"
+      redirect_to notes_path, notice: "#{@note.title} was created!"
     else
       flash[:error] = "ERROR with note"
       render :new
@@ -29,7 +29,7 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to @note, notice: "#{@note} updated!"
+      redirect_to @note, notice: "#{@note.title} updated!"
     else
       flash[:error] = "ERROR with note"
       redirect_to @note
@@ -38,7 +38,7 @@ class NotesController < ApplicationController
 
   def destroy
     if @note.destroy
-      redirect_to notes_path, notice: "#{@note} destroyed!"
+      redirect_to notes_path, notice: "#{@note.title} destroyed!"
     else
       flash[:error] = "ERROR with note"
       redirect_to @note

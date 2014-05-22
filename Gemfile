@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 # Added Gems
 gem 'bootstrap-sass'
 gem 'redcarpet'
+gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate-bootstrap'
 
 group :devlopment do
   gem 'sqlite3'

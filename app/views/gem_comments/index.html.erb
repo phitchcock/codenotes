@@ -1,0 +1,18 @@
+<h1>Index</h1>
+<hr>
+
+<% @gem_comments.each do |comment| %>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to comment.name, comment %>
+  </div>
+  <div class="col-md-5">
+    <%= comment.description %>
+  </div>
+  <div class="col-md-5">
+      <%= markdown comment.code_sample %>
+  </div>
+</div>
+<hr>
+<% end %>
+<%= will_paginate @gem_comments, renderer: BootstrapPagination::Rails %>

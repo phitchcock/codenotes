@@ -13,7 +13,10 @@
       <div class="nav-header">
         <%= link_to 'Rails Notes', root_path, class: "navbar-brand" %>
         <ul class="nav navbar-nav">
+          <li><%= link_to 'Notes', notes_path %></li>
           <li><%= link_to 'New Note', new_note_path %></li>
+          <li><%= link_to 'Gems', gem_comments_path %></li>
+          <li><%= link_to 'New Gem', new_gem_comment_path %></li>
         </ul>
       </div>
     </div>

@@ -1,1 +1,13 @@
 <h1>Index</h1>
+<hr>
+
+<% @notes.each do |note| %>
+<div class="row well">
+  <div class="col-md-6">
+    <%= link_to note.description, note %>
+  </div>
+  <div class="col-md-6">
+      <%= note.code_sample %>
+  </div>
+</div>
+<% end %>

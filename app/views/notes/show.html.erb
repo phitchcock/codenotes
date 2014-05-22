@@ -13,7 +13,7 @@
   <div class="menubar">
     <div class="page-title">
           <%= @note.title %> 
-          <small class="hidden-xs">[<%= link_to 'edit', edit_project_path(@project) %>]</small>
+          <small class="hidden-xs">[<%= link_to 'edit', edit_note_path(@note) %>] or [<%= link_to 'destroy', note_path(@note), method: :delete, data: {confirm: 'really?'} %>]</small>
     </div>
   </div>
   <p><%= markdown @note.description %></p>

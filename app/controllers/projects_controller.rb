@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     if @project.destroy
-      redirect_to root_path, notice: "#{@project.name} destroyed"
+      redirect_to projects_path, notice: "#{@project.name} destroyed"
     else
       flash[:error] = "Project was not destroyed"
       redirect_to @project

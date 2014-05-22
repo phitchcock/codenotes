@@ -15,7 +15,7 @@ gem 'redcarpet'
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 
-group :devlopment do
+group :development do
   gem 'sqlite3'
   gem 'spring'
 end

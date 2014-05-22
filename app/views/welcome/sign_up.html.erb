@@ -1,0 +1,31 @@
+<body id="signup" class="clear">
+  <a href="index.html" class="logo">
+    <i class="brankic-pen"></i>
+  </a>
+
+  <h3>Create Your Account Now</h3>
+
+  <div class="content">
+    <form>
+      <div class="fields">
+        <strong>Your access data</strong>
+        <input class="form-control" type="text" placeholder="Your email" />
+        <input class="form-control" type="password" placeholder="Password" />
+        <input class="form-control" type="password" placeholder="Confirm password" />
+      </div>
+      <div class="info">
+        Blah Blah Blah<strong> whatever whatever whatever</strong>
+      </div>
+      <div class="signup">
+        <%= link_to 'Create Account', root_path, class: "btn btn-success btn-lg" %>
+      </div>
+    </form>
+  </div>
+
+  <div class="bottom-wrapper">
+    <div class="message">
+      <span>Already have an account?</span>
+      <%= link_to 'sign in', root_path %>.
+    </div>
+  </div>
+</body>

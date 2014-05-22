@@ -1,32 +1,38 @@
-<div class="row">
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <img src="http://placehold.it/350x150" alt="...">
-      <div class="caption">
-        <h3>Notes</h3>
-        <p>...</p>
-        <%= link_to "Notes", notes_path, class: "btn btn-primary btn-block" %>
+<body id="signin" class="clear">
+
+  <a href="index.html" class="logo">
+    <i class="brankic-pen"></i>
+  </a>
+
+  <h3>Welcome back!</h3>
+
+  <div class="content">
+    <form>
+      <div class="fields">
+        <strong>Email address</strong>
+        <input class="form-control" type="text" placeholder="Your email" />
       </div>
+      <div class="fields">
+        <strong>Password</strong>
+        <input class="form-control" type="password" placeholder="Password" />
+      </div>
+      <div class="info">
+        <label>
+          <input type="checkbox" name="remember" checked />
+          Remember me
+        </label>
+      </div>
+      <div class="actions">
+        <%= link_to 'Sign in to your account', notes_path, class: "btn btn-primary btn-lg" %>
+      </div>
+    </form>
+  </div>
+
+  <div class="bottom-wrapper">
+    <div class="message">
+      <span>Don't have an account?</span>
+      <%= link_to 'sign up', sign_up_path %>.
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <img src="http://placehold.it/350x150" alt="...">
-      <div class="caption">
-        <h3>Gems</h3>
-        <p>...</p>
-        <%= link_to "Gems", gem_comments_path, class: "btn btn-primary btn-block" %>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <img src="http://placehold.it/350x150" alt="...">
-      <div class="caption">
-        <h3>Projects</h3>
-        <p>...</p>
-        <%= link_to "Projects", projects_path, class: "btn btn-primary btn-block" %>
-      </div>
-    </div>
-  </div>
-</div>
+
+</body>

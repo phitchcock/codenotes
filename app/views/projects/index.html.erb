@@ -7,7 +7,7 @@
     <%= link_to project.name, project %>
   </div>
   <div class="col-md-5">
-    <%= project.description %>
+    <%= markdown project.description %>
   </div>
   <div class="col-md-5">
       <%= markdown project.code_sample %>

@@ -7,7 +7,7 @@
     <%= link_to comment.name, comment %>
   </div>
   <div class="col-md-5">
-    <%= comment.description %>
+    <%= markdown comment.description %>
   </div>
   <div class="col-md-5">
       <%= markdown comment.code_sample %>

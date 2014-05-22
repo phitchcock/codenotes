@@ -2,12 +2,16 @@
 <hr>
 
 <% @notes.each do |note| %>
-<div class="row well">
-  <div class="col-md-6">
-    <%= link_to note.description, note %>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to note.title, note %>
   </div>
-  <div class="col-md-6">
-      <%= note.code_sample %>
+  <div class="col-md-5">
+    <%= note.description %>
+  </div>
+  <div class="col-md-5">
+      <%= markdown note.code_sample %>
   </div>
 </div>
+<hr>
 <% end %>

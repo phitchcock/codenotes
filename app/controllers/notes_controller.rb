@@ -23,7 +23,7 @@ class NotesController < ApplicationController
       redirect_to @note, notice: "#{@note.title} was created!"
     else
       flash[:error] = "ERROR with note"
-      render :new
+      render :new, layout: "empty"
     end
   end
 
@@ -36,7 +36,7 @@ class NotesController < ApplicationController
       redirect_to @note, notice: "#{@note.title} updated!"
     else
       flash[:error] = "ERROR with note"
-      redirect_to @note
+      render :edit, layout: "empty"
     end
   end
 

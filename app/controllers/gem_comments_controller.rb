@@ -8,23 +8,26 @@ class GemCommentsController < ApplicationController
   end
 
   def show
+    render layout: "empty"
   end
 
   def new
     @gem_comment = GemComment.new
+    render layout: "empty"
   end
 
   def create
     @gem_comment = GemComment.new(gem_comment_params)
     if @gem_comment.save
-      redirect_to @gem_comment, notice: "#{@gem_comment.name} created"
+      redirect_to gem_comments_path, notice: "#{@gem_comment.name} created"
     else
       flash[:error] = "Gem info did not save"
-      render :new
+      render :new, layout: "empty"
     end
   end
 
   def edit
+    render layout: "empty"
   end
 
   def update
@@ -32,7 +35,7 @@ class GemCommentsController < ApplicationController
       redirect_to @gem_comment, notice: "#{@gem_comment.name} updated"
     else
       flash[:error] = "Whoops gem comment did not save"
-      render :edit
+      render :edit, layout: "empty"
     end
   end
 

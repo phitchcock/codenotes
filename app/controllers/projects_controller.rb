@@ -8,10 +8,12 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    render layout: "empty"
   end
 
   def new
-    @project = Project.new  
+    @project = Project.new
+    render layout: "empty"
   end
 
   def create
@@ -21,11 +23,12 @@ class ProjectsController < ApplicationController
       redirect_to @project, notice: "#{@project.name} created!"
     else
       flash[:error] = "Project did not save"
-      render :new
+      render :new, layout: "empty"
     end
   end
 
   def edit
+    render layout: "empty"
   end
 
   def update
@@ -33,7 +36,7 @@ class ProjectsController < ApplicationController
       redirect_to projects_path, notice: "#{@project.name} updated"
     else
       flash[:error] = "Project did not save"
-      render :edit
+      render :edit, layout: "empty"
     end
   end
 

@@ -1,6 +1,25 @@
-<h1>Show Action</h1>
-<h3><%= @gem_comment.name %></h3>
-<p><%= @gem_comment.description %></p>
-<p><%= markdown @gem_comment.code_sample %></p>
 
-<%= link_to 'edit', edit_gem_comment_path(@gem_comment) %>
+<div id="guide">
+  <h1 class="logo"><a href="#">Gems</a></h1>
+  <ul class="menu nav">
+    <li><%= render partial: 'shared/flash' %></li>
+    <li><%= link_to 'Notes', notes_path %></li>
+    <li><%= link_to 'Gems', gem_comments_path %></li>
+    <li><%= link_to 'Projects', projects_path %></li>
+  </ul>
+</div>
+
+<div id="content">
+  <div class="menubar">
+    <div class="page-title">
+          <%= @gem_comment.name %> 
+          <small class="hidden-xs">[<%= link_to 'edit', edit_gem_comment_path(@gem_comment) %>]</small>
+    </div>
+  </div>
+  <p><%= markdown @gem_comment.description %></p>
+  <pre>
+    <code>
+      <p><%= @gem_comment.code_sample %></p>
+    </code>
+  </pre>
+</div>

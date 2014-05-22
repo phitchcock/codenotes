@@ -1,6 +1,25 @@
-<h1>Show Action</h1>
-<h3><%= @project.name %></h3>
-<p><%= markdown @project.description %></p>
-<p><%= markdown @project.code_sample %></p>
 
-<%= link_to 'edit', edit_project_path(@project) %>
+<div id="guide">
+  <h1 class="logo"><a href="#">Projects</a></h1>
+  <ul class="menu nav">
+    <li><%= render partial: 'shared/flash' %></li>
+    <li><%= link_to 'Notes', notes_path %></li>
+    <li><%= link_to 'Gems', gem_comments_path %></li>
+    <li><%= link_to 'Projects', projects_path %></li>
+  </ul>
+</div>
+
+<div id="content">
+  <div class="menubar">
+    <div class="page-title">
+          <%= @project.name %> 
+          <small class="hidden-xs">[<%= link_to 'edit', edit_project_path(@project) %>]</small>
+    </div>
+  </div>
+  <p><%= markdown @project.description %></p>
+  <pre>
+    <code>
+      <p><%= @project.code_sample %></p>
+    </code>
+  </pre>
+</div>

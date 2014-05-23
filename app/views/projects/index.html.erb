@@ -1,21 +1,17 @@
 <div id="page-wrapper">
+  <h3>Projects</h3>
+  <% @projects.each do |project| %>
+  <hr>
   <div class="row">
-    <h3>Projects</h3>
-    <hr>
-    <% @projects.each do |project| %>
     <div class="col-md-6">
       <h3><%= link_to project.name, project %> <small>[<%= link_to 'edit', edit_project_path(project) %>]</small></h3>
       <p><%= markdown project.description %></p>
     </div>
     <div class="col-md-6">
-      <pre>
-        <code>
-          <%= project.code_sample %>
-        </code>
-      </pre>
+      <%= markdown project.code_sample %>
     </div>
-    <% end %>
   </div>
+  <% end %>
   <%= will_paginate @projects, renderer: BootstrapPagination::Rails %>
 </div>
 

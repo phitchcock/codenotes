@@ -8,11 +8,7 @@
       <p><%= markdown @gem_comment.description %></p>
     </div>
     <div class="col-md-6">
-      <pre>
-        <code>
-          <p><%= @gem_comment.code_sample %></p>
-        </code>
-      </pre>
+      <%= markdown @gem_comment.code_sample %>
     </div>
   </div>
 </div>

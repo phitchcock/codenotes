@@ -1,20 +1,16 @@
 <div id="page-wrapper">
+  <h3>Gems</h3>
+  <% @gem_comments.each do |gems| %>
+  <hr>
   <div class="row">
-    <h3>Gems</h3>
-    <hr>
-    <% @gem_comments.each do |gem| %>
     <div class="col-md-6">
-      <h3><%= link_to gem.name, gem %> <small>[<%= link_to 'edit', edit_gem_comment_path(gem) %>]</small></h3>
-      <p><%= markdown gem.description %></p>
+      <h3><%= link_to gems.name, gems %> <small>[<%= link_to 'edit', edit_gem_comment_path(gems) %>]</small></h3>
+      <p><%= markdown gems.description %></p>
     </div>
     <div class="col-md-6">
-      <pre>
-        <code>
-          <%= gem.code_sample %>
-        </code>
-      </pre>
+      <%= markdown gems.code_sample %>
     </div>
-    <% end %>
   </div>
+  <% end %>
   <%= will_paginate @gem_comments, renderer: BootstrapPagination::Rails %>
 </div>

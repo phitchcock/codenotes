@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+ root "welcome#dashboard"
  get 'dashboard' => "welcome#dashboard"
 
  devise_for :users

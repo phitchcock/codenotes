@@ -17,7 +17,7 @@
       <div class="method-section clearfix">
         <div class="method-description">
           <h3><%= link_to note.title, note %><small> [<%= link_to 'edit', edit_note_path(note) %>]</small></h3>
-          <p><%= note.description %></p>
+          <p><%= markdown note.description %></p>
         </div>
         <div class="method-example">
           <pre>

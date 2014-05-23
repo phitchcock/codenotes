@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
     @notes = Note.all
     @gem_comments = GemComment.all
     @projects = Project.all
+    @users = User.all
 
     @total = Note.count + GemComment.count + Project.count
  
@@ -14,6 +15,10 @@ class WelcomeController < ApplicationController
 
   def sign_up
     render layout: "theme"
+  end
+
+  def test
+    render layout: "dashboard"
   end
   
 end

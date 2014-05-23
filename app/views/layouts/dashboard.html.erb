@@ -14,9 +14,12 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-
-  <li><%= render partial: 'shared/flash' %></li>
+  <body>
+    
+      <%= render partial: 'shared/sidebar_menu' %>
   
-  <%= yield %>
+    <%= yield %>
 
+   
+  </body>
 </html>

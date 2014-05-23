@@ -5,9 +5,10 @@
     <!-- <i class="brankic-pen"></i> -->
   </a>
 
-  <h3>Welcome back!</h3>
+  <h3>Welcome back to Code Notes!</h3>
 
   <div class="content">
+    <%= devise_error_messages! %>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="fields">
         <%= f.label :email %><br />

@@ -3,5 +3,5 @@ class GemComment < ActiveRecord::Base
   validates :description, presence: true
   validates :code_sample, presence: true
 
-  default_scope { order('name DESC') }
+  default_scope { order('name ASC') }
 end

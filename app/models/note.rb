@@ -3,5 +3,5 @@ class Note < ActiveRecord::Base
   validates :description, presence: true
   validates :code_sample, presence: true
 
-  default_scope { order('title DESC') }
+  default_scope { order('title ASC') }
 end

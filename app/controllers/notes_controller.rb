@@ -5,16 +5,13 @@ class NotesController < ApplicationController
 
   def index
     @notes = Note.paginate(page: params[:page], per_page: 10)
-    render layout: "empty"
   end
 
   def show
-    render layout: "empty"
   end
 
   def new
     @note = Note.new
-    render layout: "empty"
   end
 
   def create
@@ -24,12 +21,11 @@ class NotesController < ApplicationController
       redirect_to @note, notice: "#{@note.title} was created!"
     else
       flash[:error] = "ERROR with note"
-      render :new, layout: "empty"
+      render :new
     end
   end
 
   def edit
-    render layout: "empty"
   end
 
   def update
@@ -37,7 +33,7 @@ class NotesController < ApplicationController
       redirect_to @note, notice: "#{@note.title} updated!"
     else
       flash[:error] = "ERROR with note"
-      render :edit, layout: "empty"
+      render :edit
     end
   end
 

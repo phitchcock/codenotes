@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
- get 'sign_up' => "welcome#sign_up"
  get 'dashboard' => "welcome#dashboard"
- get 'test' => "welcome#test"
 
  devise_for :users
  resources :notes

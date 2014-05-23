@@ -9,16 +9,6 @@ class WelcomeController < ApplicationController
     @users = User.all
 
     @total = Note.count + GemComment.count + Project.count
- 
-    render layout: "theme"
-  end
-
-  def sign_up
-    render layout: "theme"
-  end
-
-  def test
-    render layout: "dashboard"
   end
   
 end

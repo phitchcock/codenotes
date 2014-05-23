@@ -5,16 +5,13 @@ class GemCommentsController < ApplicationController
 
   def index
     @gem_comments = GemComment.paginate(page: params[:page], per_page: 10)
-    render layout: "empty"
   end
 
   def show
-    render layout: "empty"
   end
 
   def new
     @gem_comment = GemComment.new
-    render layout: "empty"
   end
 
   def create
@@ -23,12 +20,11 @@ class GemCommentsController < ApplicationController
       redirect_to gem_comments_path, notice: "#{@gem_comment.name} created"
     else
       flash[:error] = "Gem info did not save"
-      render :new, layout: "empty"
+      render :new
     end
   end
 
   def edit
-    render layout: "empty"
   end
 
   def update
@@ -36,7 +32,7 @@ class GemCommentsController < ApplicationController
       redirect_to @gem_comment, notice: "#{@gem_comment.name} updated"
     else
       flash[:error] = "Whoops gem comment did not save"
-      render :edit, layout: "empty"
+      render :edit
     end
   end
 

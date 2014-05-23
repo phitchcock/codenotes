@@ -5,16 +5,13 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.paginate(page: params[:page], per_page: 10)
-    render layout: "empty"
   end
 
   def show
-    render layout: "empty"
   end
 
   def new
     @project = Project.new
-    render layout: "empty"
   end
 
   def create
@@ -24,12 +21,11 @@ class ProjectsController < ApplicationController
       redirect_to @project, notice: "#{@project.name} created!"
     else
       flash[:error] = "Project did not save"
-      render :new, layout: "empty"
+      render :new
     end
   end
 
   def edit
-    render layout: "empty"
   end
 
   def update
@@ -37,7 +33,7 @@ class ProjectsController < ApplicationController
       redirect_to projects_path, notice: "#{@project.name} updated"
     else
       flash[:error] = "Project did not save"
-      render :edit, layout: "empty"
+      render :edit
     end
   end
 

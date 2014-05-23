@@ -16,6 +16,7 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 gem 'devise'
 gem 'figaro'
+gem 'font-awesome-sass'
 
 group :development do
   gem 'sqlite3'

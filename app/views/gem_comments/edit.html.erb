@@ -1,18 +1,9 @@
-<div id="guide">
-  <h1 class="logo"><a href="#">Gems</a></h1>
-<%= render partial: 'shared/nav' %>
-</div>
-
-<div id="content">
-  <div class="menubar">
-    <div class="page-title">
-          Editing
-          <small class="hidden-xs">
-            <strong><%= @gem_comment.name %></strong>
-          </small>
+<div id="page-wrapper">
+  <div class="row">
+    <h3>Editing <%= @gem_comment.name %></h3>
+    <hr>
+    <div class="col-md-10">
+      <%= render partial: 'form', locals: {gem_comment: @gem_comment} %>
     </div>
   </div>
-  
-  <%= render partial: 'form', locals: {gem_comment: @gem_comment} %>
-
 </div>

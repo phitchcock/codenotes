@@ -1,18 +1,9 @@
-<div id="guide">
-  <h1 class="logo"><a href="#">Projects</a></h1>
-  <%= render partial: 'shared/nav' %>
-</div>
-
-<div id="content">
-  <div class="menubar">
-    <div class="page-title">
-          Edit Project
-          <small class="hidden-xs">
-            <strong><%= @project.name %></strong>
-          </small>
+<div id="page-wrapper">
+  <div class="row">
+    <h3>Editing <%= @project.name %></h3>
+    <hr>
+    <div class="col-md-10">
+      <%= render partial: 'form', locals: {project: @project} %>
     </div>
   </div>
-
-<%= render partial: 'form', locals: {project: @project} %>
-
 </div>

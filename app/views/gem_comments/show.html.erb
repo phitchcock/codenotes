@@ -1,20 +1,18 @@
-
-<div id="guide">
-  <h1 class="logo"><a href="#">Gems</a></h1>
-  <%= render partial: 'shared/nav' %>
-</div>
-
-<div id="content">
-  <div class="menubar">
-    <div class="page-title">
-          <%= @gem_comment.name %> 
-          <small class="hidden-xs">[<%= link_to 'edit', edit_gem_comment_path(@gem_comment) %>] or [<%= link_to 'destroy', gem_comment_path(@gem_comment), method: :delete, data: {confirm: 'really?'} %>]</small>
+<div id="page-wrapper">
+  <div class="row">
+    <h3><%= @gem_comment.name %>
+      <small class="hidden-xs">[<%= link_to 'edit', edit_gem_comment_path(@gem_comment) %>] or [<%= link_to 'destroy', gem_comment_path(@gem_comment), method: :delete, data: {confirm: 'really?'} %>]</small>
+    </h3>
+    <hr>
+    <div class="col-md-6">
+      <p><%= markdown @gem_comment.description %></p>
+    </div>
+    <div class="col-md-6">
+      <pre>
+        <code>
+          <p><%= @gem_comment.code_sample %></p>
+        </code>
+      </pre>
     </div>
   </div>
-  <p><%= markdown @gem_comment.description %></p>
-  <pre>
-    <code>
-      <p><%= @gem_comment.code_sample %></p>
-    </code>
-  </pre>
 </div>

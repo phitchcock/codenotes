@@ -1,34 +1,20 @@
-<div id="guide">
-  <h1 class="logo"><a href="#">Projects</a></h1>
- <%= render partial: 'shared/nav' %>
-</div>
-<div id="api-docs">
-  <div id="methods">
-    <div class="languages">
-      <a class="language selected" data-lang="ruby" href="#">Ruby</a>
-      <%= link_to 'Note', new_note_path, class: "language selected" %>
-      <%= link_to 'Gem', new_gem_comment_path, class: "language selected" %>
-      <%= link_to 'Project', new_project_path, class: "language selected" %>
-    </div>
-
+<div id="page-wrapper">
+  <div class="row">
+    <h3>Projects</h3>
+    <hr>
     <% @projects.each do |project| %>
-    <div class="method">
-      <div class="method-section clearfix">
-        <div class="method-description">
-          <h3><%= link_to project.name, project %><small> [<%= link_to 'edit', edit_project_path(project) %>]</small></h3>
-          <p><%= markdown project.description %></p>
-        </div>
-        <div class="method-example">
-          <pre>
-          <code class="ruby">
-            <%= project.code_sample %>
-          </code>
-          </pre>
-        </div>
-      </div>
+    <div class="col-md-6">
+      <h3><%= link_to project.name, project %> <small>[<%= link_to 'edit', edit_project_path(project) %>]</small></h3>
+      <p><%= markdown project.description %></p>
+    </div>
+    <div class="col-md-6">
+      <pre>
+        <code>
+          <%= project.code_sample %>
+        </code>
+      </pre>
     </div>
     <% end %>
-
   </div>
   <%= will_paginate @projects, renderer: BootstrapPagination::Rails %>
 </div>

@@ -14,9 +14,16 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-
-  <li><%= render partial: 'shared/flash' %></li>
-  
-  <%= yield %>
-
+  <body>
+    <div class="container">
+      <%= render partial: 'shared/flash' %>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            
+            <%= yield %>
+          
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

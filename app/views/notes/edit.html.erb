@@ -1,18 +1,9 @@
-<div id="guide">
-  <h1 class="logo"><a href="#">Notes</a></h1>
-  <%= render partial: 'shared/nav' %>
-</div>
-
-<div id="content">
-  <div class="menubar">
-    <div class="page-title">
-          Edit Note 
-          <small class="hidden-xs">
-            <strong>update note</strong>
-          </small>
+<div id="page-wrapper">
+  <div class="row">
+    <h3>Editing <%= @note.title %></h3>
+    <hr>
+    <div class="col-md-10">
+      <%= render partial: 'form', locals: {note: @note} %>
     </div>
   </div>
-
-<%= render partial: 'form', locals: {note: @note} %>
-
 </div>

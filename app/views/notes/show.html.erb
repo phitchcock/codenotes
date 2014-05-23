@@ -1,7 +1,7 @@
 <div id="page-wrapper">
   <div class="row">
-    <h3><%= truncate(@note.title, length: 10) %>
-      <small class="hidden-xs">[<%= link_to 'edit', edit_note_path(@note) %>] or [<%= link_to 'destroy', note_path(@note), method: :delete, data: {confirm: 'really?'} %>]</small>
+    <h3><%= @note.title %>
+      <small class="hidden-xs">[<%= link_to 'edit', edit_note_path(@note) %>] or [<%= link_to 'destroy', note_path(@note), method: :delete, data: {confirm: 'really?'} %>] this note...</small>
     </h3>
     <hr>
     <div class="col-md-6">

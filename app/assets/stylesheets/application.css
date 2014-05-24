@@ -21,3 +21,19 @@
 body {
   padding-top: 60px;
 }
+
+.well{
+  background:  #55C1E7;
+}
+
+.well-grey {
+  background: #999999;
+}
+
+.well-green {
+  background: #3F903F;
+}
+
+.well-orange {
+  background: #F0AD4E;
+}

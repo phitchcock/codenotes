@@ -53,47 +53,21 @@
                     <i class="fa fa-tachometer"> Dashboard</i>
                   <% end %>
                 <li>
-                    <%= link_to notes_path do %>
-                      <i class="fa fa-pencil"> Notes</i>
-                    <% end %>
-                    <ul class="nav nav-second-level">
-                      <li>
-                        <%= link_to new_note_path do %>
-                          <i class="fa fa-share"> New-Note</i>
-                        <% end %>
-                      </li>
-                    </ul>
+                  <%= link_to new_note_path do %>
+                    <i class="fa fa-pencil"> New-Note</i>
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to gem_comments_path do %>
-                    <i class="fa fa-cubes"> Gems</i>
+                  <%= link_to new_gem_comment_path do %>
+                    <i class="fa fa-cubes"> New-Gem</i>
                   <% end %>
-                  <ul class="nav nav-second-level">
-                    <li>
-                      <%= link_to new_gem_comment_path do %>
-                        <i class="fa fa-share"> New-Gem</i>
-                      <% end %>
-                    </li>
-                  </ul>
                 </li>
                 <li>
-                  <%= link_to projects_path do %>
-                    <i class="fa fa-file-code-o"> Project</i>
+                  <%= link_to new_project_path do %>
+                    <i class="fa fa-file-code-o"> New-Project</i>
                   <% end %>
-                  <ul class="nav nav-second-level">
-                    <li>
-                      <%= link_to new_project_path do %>
-                        <i class="fa fa-share"> New-Project</i>
-                      <% end %>
-                    </li>
-                  </ul>
                 </li>
-                
-                
-                
-                
-           
-                
+
             </ul>
             <!-- /#side-menu -->
         </div>
